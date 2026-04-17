@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
@@ -24,7 +25,7 @@ bot.on('message', async (msg) => {
     const text = msg.text;
     const firstName = msg.from?.first_name || 'Unknown';
 
-    if (!text || msg.type !== 'private') {
+    if (!text || msg.chat.type !== 'private') {
       return;
     }
 
