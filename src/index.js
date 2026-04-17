@@ -42,7 +42,7 @@ bot.on('message', async (msg) => {
     };
 
     const response = await axios.post(
-      `${PAPERCLIP_API_URL}/api/issues`,
+      `${PAPERCLIP_API_URL}/api/companies/${COMPANY_ID}/issues`,
       issuePayload,
       {
         headers: {
